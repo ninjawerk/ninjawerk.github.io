@@ -1,0 +1,206 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Deshan Alahakoon — Senior Frontend & Full-Stack Engineer</title>
+<meta name="description" content="Senior frontend & full-stack engineer in Amsterdam. 10 years building mission-critical web products — most recently the AirFrance/KLM in-flight portal for 5–8M monthly users.">
+<style>
+  :root{
+    --bg:#0e0f13; --panel:#15171d; --line:#242833; --fg:#eef0f4; --muted:#9aa2b1; --dim:#6b7280;
+    --accent:#e0873a; --accent-2:#f0a257; --accent-ink:#1a0f05;
+    --max:960px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{background:var(--bg);color:var(--fg);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Roboto,Helvetica,Arial,sans-serif;
+    line-height:1.6;-webkit-font-smoothing:antialiased;font-size:16px}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:var(--max);margin:0 auto;padding:0 24px}
+  /* nav */
+  nav{position:sticky;top:0;z-index:10;backdrop-filter:blur(10px);background:rgba(14,15,19,.72);border-bottom:1px solid var(--line)}
+  nav .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
+  .brand{font-weight:800;letter-spacing:-.02em}
+  .brand span{color:var(--accent)}
+  .navlinks{display:flex;gap:26px;font-size:14px;color:var(--muted)}
+  .navlinks a:hover{color:var(--fg)}
+  @media(max-width:620px){.navlinks{display:none}}
+  /* hero */
+  header{padding:88px 0 64px;position:relative;overflow:hidden}
+  .glow{position:absolute;top:-160px;right:-120px;width:520px;height:520px;border-radius:50%;
+    background:radial-gradient(circle,rgba(224,135,58,.18),transparent 62%);filter:blur(20px);pointer-events:none}
+  .eyebrow{color:var(--accent-2);font-size:13px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;margin-bottom:18px}
+  h1{font-size:clamp(34px,6vw,58px);line-height:1.05;letter-spacing:-.03em;font-weight:800}
+  h1 .lo{color:var(--muted);font-weight:800}
+  .lede{margin:22px 0 0;font-size:clamp(17px,2.4vw,20px);color:var(--muted);max-width:620px}
+  .lede b{color:var(--fg);font-weight:600}
+  .avail{display:inline-flex;align-items:center;gap:9px;margin-top:26px;padding:8px 15px;border:1px solid var(--line);
+    border-radius:999px;background:var(--panel);font-size:13.5px;color:var(--muted)}
+  .dot{width:8px;height:8px;border-radius:50%;background:#39d98a;box-shadow:0 0 0 4px rgba(57,217,138,.16)}
+  .cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
+  .btn{display:inline-flex;align-items:center;gap:8px;padding:11px 18px;border-radius:11px;font-weight:600;font-size:14.5px;transition:.16s}
+  .btn.primary{background:var(--accent);color:var(--accent-ink)}
+  .btn.primary:hover{background:var(--accent-2);transform:translateY(-1px)}
+  .btn.ghost{border:1px solid var(--line);color:var(--fg)}
+  .btn.ghost:hover{border-color:var(--accent);color:var(--accent-2)}
+  /* sections */
+  section{padding:56px 0;border-top:1px solid var(--line)}
+  .kicker{color:var(--accent-2);font-size:12.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;margin-bottom:18px}
+  .about p{font-size:clamp(16px,2vw,18px);color:#c8cdd7;max-width:720px}
+  .about p b{color:var(--fg)}
+  .about p + p{margin-top:14px}
+  /* work */
+  .job{display:grid;grid-template-columns:150px 1fr;gap:18px;padding:20px 0;border-bottom:1px solid var(--line)}
+  .job:last-child{border-bottom:0}
+  .job .when{color:var(--dim);font-size:13px;padding-top:2px}
+  .job h3{font-size:17px;font-weight:700}
+  .job .co{color:var(--accent-2);font-weight:600}
+  .job p{color:var(--muted);font-size:14.5px;margin-top:6px}
+  .job .tech{margin-top:9px;font-size:12.5px;color:var(--dim)}
+  @media(max-width:620px){.job{grid-template-columns:1fr;gap:4px}.job .when{padding-top:0}}
+  /* projects */
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:16px}
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:18px 18px 16px;transition:.18s}
+  .card:hover{border-color:var(--accent);transform:translateY(-2px)}
+  .card h3{font-size:16px;font-weight:700;display:flex;align-items:center;gap:8px}
+  .card .arrow{color:var(--dim);font-size:13px;transition:.18s}
+  .card:hover .arrow{color:var(--accent-2);transform:translate(2px,-2px)}
+  .card p{color:var(--muted);font-size:13.5px;margin-top:7px}
+  .card .tag{margin-top:11px;font-size:11.5px;color:var(--dim)}
+  .card .live{display:inline-block;margin-left:6px;font-size:10.5px;color:#39d98a;border:1px solid rgba(57,217,138,.35);border-radius:6px;padding:0 6px;vertical-align:middle}
+  /* skills */
+  .skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px}
+  .skills h4{font-size:13px;color:var(--accent-2);text-transform:uppercase;letter-spacing:.08em;margin-bottom:9px}
+  .skills ul{list-style:none;display:flex;flex-wrap:wrap;gap:7px}
+  .skills li{font-size:12.5px;color:var(--muted);border:1px solid var(--line);border-radius:7px;padding:4px 9px;background:var(--panel)}
+  /* contact */
+  .contact{text-align:center;padding:72px 0}
+  .contact h2{font-size:clamp(26px,4vw,38px);letter-spacing:-.02em;font-weight:800}
+  .contact p{color:var(--muted);margin:14px 0 26px;max-width:520px;margin-left:auto;margin-right:auto}
+  footer{border-top:1px solid var(--line);padding:26px 0;color:var(--dim);font-size:13px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
+  footer a:hover{color:var(--fg)}
+</style>
+</head>
+<body>
+
+<nav><div class="wrap">
+  <div class="brand">Deshan<span>.</span></div>
+  <div class="navlinks">
+    <a href="#about">About</a><a href="#work">Work</a><a href="#projects">Projects</a><a href="#skills">Skills</a><a href="#contact">Contact</a>
+  </div>
+</div></nav>
+
+<header><div class="glow"></div><div class="wrap">
+  <div class="eyebrow">Senior Frontend &amp; Full-Stack Engineer</div>
+  <h1>Deshan Alahakoon<br><span class="lo">builds web that holds up under pressure.</span></h1>
+  <p class="lede">Ten years shipping <b>mission-critical web products</b> — most recently the AirFrance/KLM in-flight portal for
+    <b>5–8&nbsp;million monthly users</b>, engineered to stay fast in a hostile, offline, bandwidth-starved environment.
+    Deep in <b>React &amp; Angular</b>, genuinely <b>AI-native</b>, and happiest owning a product end to end.</p>
+  <div class="avail"><span class="dot"></span> Open to senior / lead frontend roles · Amsterdam · Netherlands work-authorised</div>
+  <div class="cta">
+    <a class="btn primary" href="mailto:justdeshan@gmail.com">Get in touch →</a>
+    <a class="btn ghost" href="https://github.com/ninjawerk" target="_blank" rel="noopener">GitHub</a>
+    <a class="btn ghost" href="https://janma.app" target="_blank" rel="noopener">janma.app ↗</a>
+  </div>
+</div></header>
+
+<section id="about" class="about"><div class="wrap">
+  <div class="kicker">About</div>
+  <p>I'm a frontend-focused full-stack engineer who cares about the whole arc: <b>clean architecture, delightful UX, and
+    software that keeps working when the conditions are bad.</b> I built the AirFrance/KLM Starlink in-flight portal from
+    scratch and own its lifecycle — dev, testing, monitoring, release — including a live flight map rendered in pure SVG to
+    fit the bandwidth budget.</p>
+  <p>Before that: real-time audio pipelines at scale, enterprise React platforms, and a decade of building across web,
+    systems, and even hardware for the love of it. Lately I build <b>with AI</b> — I shipped a full production app on Google
+    Gemini and own its prompt architecture, and I work with coding agents daily.</p>
+</div></section>
+
+<section id="work"><div class="wrap">
+  <div class="kicker">Selected Work</div>
+  <div class="job"><div class="when">2022 — Now</div><div>
+    <h3>Technical Lead / Sr Frontend — <span class="co">Reaktor</span></h3>
+    <p>Built the AirFrance &amp; KLM in-flight portal from scratch (5–8M monthly users) and own its full lifecycle. Offline-first,
+      reliability-critical; live flight-mapping in pure SVG; designed the release/versioning system and drive the team.</p>
+    <div class="tech">TypeScript · Angular · RxJS · Nx · Playwright · Azure/AWS · Starlink Router API</div>
+  </div></div>
+  <div class="job"><div class="when">2020 — 2022</div><div>
+    <h3>Senior Full-Stack Engineer — <span class="co">Clevertech</span></h3>
+    <p>Led frontend on Clevertech's largest enterprise programme (30+ engineers) in React/Next/TypeScript; stepped in at
+      critical roadblocks to stabilise delivery and shaped stack decisions across front and back end.</p>
+    <div class="tech">React · Next.js · TypeScript · Node.js · GraphQL · PostgreSQL · AWS</div>
+  </div></div>
+  <div class="job"><div class="when">2019 — 2020</div><div>
+    <h3>Backend / Full-Stack Architect — <span class="co">VoiceIQ</span></h3>
+    <p>Built an end-to-end sales-comms platform with a real-time audio pipeline transcoding thousands of concurrent streams
+      on the fly, plus AI sentiment analysis and low-latency, real-time transcript highlighting.</p>
+    <div class="tech">React · Node.js · .NET · Apache Pulsar · Druid · FFmpeg · Twilio</div>
+  </div></div>
+  <div class="job"><div class="when">2015 — 2018</div><div>
+    <h3>Senior Software Engineer — <span class="co">Calcey · Intellogic</span></h3>
+    <p>Led React Native mobile teams (offline-first content for firefighters) and built ERP/CRM systems in React, AngularJS
+      and .NET Core.</p>
+    <div class="tech">React Native · React · AngularJS · .NET Core · PostgreSQL</div>
+  </div></div>
+</div></section>
+
+<section id="projects"><div class="wrap">
+  <div class="kicker">Projects</div>
+  <div class="grid">
+    <a class="card" href="https://janma.app" target="_blank" rel="noopener">
+      <h3>Janma <span class="live">LIVE</span> <span class="arrow" style="margin-left:auto">↗</span></h3>
+      <p>Production Vedic-astrology app, solo-built end to end: Flutter + Node/Express on GCP Cloud Run + PostgreSQL,
+        Google Gemini AI, keyless CI/CD, RevenueCat billing, EN/Sinhala i18n.</p>
+      <div class="tag">Flutter · Node · GCP · Gemini AI</div>
+    </a>
+    <a class="card" href="https://github.com/ninjawerk/Safire2" target="_blank" rel="noopener">
+      <h3>Safire2 <span class="arrow" style="margin-left:auto">↗</span></h3>
+      <p>Real-time audio-DSP desktop player — dynamic amplification, pitch-shift, vocal removal (karaoke), and a
+        Winamp-compatible plugin system.</p>
+      <div class="tag">C# · WPF · DSP</div>
+    </a>
+    <a class="card" href="https://github.com/ninjawerk" target="_blank" rel="noopener">
+      <h3>home-arr <span class="arrow" style="margin-left:auto">↗</span></h3>
+      <p>Self-hosted media &amp; file-sharing stack for Raspberry Pi — containerised services + Samba.</p>
+      <div class="tag">Docker · Shell · Homelab</div>
+    </a>
+    <a class="card" href="https://github.com/ninjawerk" target="_blank" rel="noopener">
+      <h3>More on GitHub <span class="arrow" style="margin-left:auto">↗</span></h3>
+      <p>A TypeScript Bloom filter, an Arduino wireless-LIDAR rig, a DirectX graphics engine — a habit of building across
+        web, systems, audio and hardware.</p>
+      <div class="tag">TypeScript · C++ · Arduino</div>
+    </a>
+  </div>
+</div></section>
+
+<section id="skills"><div class="wrap">
+  <div class="kicker">Skills</div>
+  <div class="skills">
+    <div><h4>Frontend</h4><ul>
+      <li>React</li><li>Angular</li><li>Next.js</li><li>Vue</li><li>TypeScript</li><li>RxJS</li><li>CSS/SCSS</li><li>SVG</li>
+      <li>Web Performance</li><li>Accessibility</li><li>Design Systems</li><li>Jest · Playwright</li></ul></div>
+    <div><h4>Backend</h4><ul>
+      <li>Node.js</li><li>Go</li><li>.NET / C#</li><li>GraphQL</li><li>REST APIs</li><li>Event-driven</li></ul></div>
+    <div><h4>AI / GenAI</h4><ul>
+      <li>Google Gemini</li><li>LLM app design</li><li>Prompt engineering</li><li>Agentic coding</li></ul></div>
+    <div><h4>Cloud &amp; Data</h4><ul>
+      <li>AWS</li><li>GCP</li><li>Azure</li><li>Docker</li><li>PostgreSQL</li><li>Kafka · Pulsar</li><li>CI/CD</li></ul></div>
+  </div>
+</div></section>
+
+<section id="contact" class="contact"><div class="wrap">
+  <h2>Let's build something.</h2>
+  <p>Amsterdam-based, Netherlands work-authorised, open to senior / lead frontend and full-stack roles.</p>
+  <a class="btn primary" href="mailto:justdeshan@gmail.com">justdeshan@gmail.com →</a>
+</div></section>
+
+<footer><div class="wrap" style="display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;width:100%">
+  <span>© 2026 Deshan Alahakoon</span>
+  <span>
+    <a href="https://github.com/ninjawerk" target="_blank" rel="noopener">GitHub</a> ·
+    <a href="https://janma.app" target="_blank" rel="noopener">janma.app</a> ·
+    <a href="mailto:justdeshan@gmail.com">Email</a>
+  </span>
+</div></footer>
+
+</body>
+</html>
